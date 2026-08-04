@@ -50,6 +50,15 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
+playwright-report/
+reports/
+screenshots/
+logs/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
 
 # Translations
 *.mo
