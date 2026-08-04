@@ -56,6 +56,18 @@ Run all tests:
 pytest
 ```
 
+Run in headless mode explicitly:
+
+```bash
+HEADLESS=true pytest
+```
+
+Run in headed mode locally:
+
+```bash
+HEADLESS=false pytest
+```
+
 Run a specific suite:
 
 ```bash
@@ -75,7 +87,20 @@ pytest tests/ui/test_sample_app.py
 
 - HTML report: reports/pytest_report.html
 - Failure screenshots: screenshots/
+- Copied report assets: reports/assets/
 - Logs: logs/framework.log
+
+When a test fails, the framework captures a screenshot and adds a visible "Failure Screenshot" section to the generated HTML report, along with a copied image under reports/assets.
+
+## CI Usage
+
+The framework defaults to headless mode when the CI environment variable is set. You can also force it explicitly:
+
+```bash
+CI=true HEADLESS=true pytest
+```
+
+A GitHub Actions example is included in [.github/workflows/ci.yml](.github/workflows/ci.yml).
 
 ## Example Features
 

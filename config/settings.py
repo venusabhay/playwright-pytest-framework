@@ -11,4 +11,6 @@ for directory in [SCREENSHOT_DIR, REPORT_DIR, LOG_DIR]:
     directory.mkdir(parents=True, exist_ok=True)
 
 BASE_URL = os.getenv("BASE_URL", "file://")
-HEADLESS = os.getenv("HEADLESS", "true").lower() == "true"
+CI_ENV = os.getenv("CI", "").lower() in {"1", "true", "yes", "on"}
+HEADLESS_ENV = os.getenv("HEADLESS")
+HEADLESS = str(HEADLESS_ENV).lower() == "true" if HEADLESS_ENV is not None else CI_ENV
