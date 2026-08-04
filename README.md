@@ -110,6 +110,24 @@ Example:
 BASE_URL=https://example.test BROWSER=firefox HEADLESS=true ACTION_TIMEOUT=15000 RETRY_COUNT=2 pytest
 ```
 
+## Code Quality and Reporting
+
+The framework now includes:
+
+- Ruff for linting
+- Black for formatting
+- pre-commit hooks for local enforcement
+- Allure results output under reports/allure-results
+
+Useful commands:
+
+```bash
+ruff check .
+black .
+pre-commit install
+pytest --alluredir=reports/allure-results
+```
+
 ## CI Usage
 
 The framework defaults to headless mode when the CI environment variable is set. You can also force it explicitly:
