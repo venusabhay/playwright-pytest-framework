@@ -27,7 +27,7 @@ jobs:
           CI: true
           HEADLESS: true
           ENVIRONMENT: ci
-        run: pytest
+        run: pytest -n auto
 
       - name: Upload test artifacts
         if: always()

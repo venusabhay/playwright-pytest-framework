@@ -1,4 +1,6 @@
 pytest>=8.0.0
 pytest-html>=4.0.0
+pytest-rerunfailures>=14.0.0
+pytest-xdist>=3.0.0
 playwright>=1.48.0
 requests>=2.31.0
