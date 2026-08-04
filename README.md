@@ -88,9 +88,27 @@ pytest tests/ui/test_sample_app.py
 - HTML report: reports/pytest_report.html
 - Failure screenshots: screenshots/
 - Copied report assets: reports/assets/
+- Traces: traces/
+- Videos: videos/
 - Logs: logs/framework.log
 
-When a test fails, the framework captures a screenshot and adds a visible "Failure Screenshot" section to the generated HTML report, along with a copied image under reports/assets.
+When a test fails, the framework captures a screenshot, records a trace, and adds a visible "Failure Screenshot" section to the generated HTML report, along with copied images under reports/assets.
+
+## Configuration
+
+The framework now reads a few useful settings from environment variables:
+
+- BASE_URL
+- BROWSER (chromium, firefox, webkit)
+- HEADLESS
+- ACTION_TIMEOUT
+- RETRY_COUNT
+
+Example:
+
+```bash
+BASE_URL=https://example.test BROWSER=firefox HEADLESS=true ACTION_TIMEOUT=15000 RETRY_COUNT=2 pytest
+```
 
 ## CI Usage
 

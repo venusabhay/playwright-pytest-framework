@@ -1,0 +1,7 @@
+{
+  "base_url": "file://",
+  "headless": true,
+  "browser": "chromium",
+  "action_timeout": 10000,
+  "retry_count": 1
+}
