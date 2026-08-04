@@ -65,7 +65,7 @@ def _capture_failure_screenshot(request, page, context):
         trace_path = TRACE_DIR / f"{request.node.name}.zip"
         try:
             page.screenshot(path=str(screenshot_path), full_page=True)
-            context.tracing.start(path=str(trace_path))
+            context.tracing.start()
             context.tracing.stop(path=str(trace_path))
             setattr(request.node, "screenshot_path", str(screenshot_path))
             setattr(request.node, "trace_path", str(trace_path))
